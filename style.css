@@ -1,0 +1,84 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+    background: url('./Space.png');
+    background-color: rgb(9, 9, 157);
+    height: 800px;
+    animation: backgroundMove 4s ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+.rocket{
+    height: 200px;
+}
+
+.rocketImg{
+    height: 100%;
+    position: relative;
+    top: 500px;
+    left: 500px;
+    transform: rotateZ(45deg);
+    animation: rocketMove 2s ease-in-out infinite,
+                rocketToEarth 3s ease-in-out 12s forwards;
+}
+
+.cody{
+    height: 180px;
+    position: relative;
+    top: 320px;
+    left: -200px;
+    animation: codyStanding 2s ease-in-out infinite,
+                codyAndRocket 4s ease-in-out 3s forwards,
+                codyInRocket 2s ease-in-out 8s forwards;
+}
+
+@keyframes backgroundMove{
+    100%{
+        background-position: 2000% 0%;
+    }
+}
+
+@keyframes rocketMove{
+    0%{
+        top: 500px;
+    }
+    50%{
+        top: 450px;
+    }
+    100%{
+        top: 500px;
+    }
+}
+
+@keyframes codyStanding{
+    50%{
+        top: 280px;
+    }
+}
+
+@keyframes codyAndRocket{
+    from{
+        left: -200px;
+    }
+    to{
+        left: 380px;
+    }
+}
+
+@keyframes codyInRocket{
+    100%{
+        left: 650px;
+        transform: scale(0);
+    }
+}
+
+@keyframes rocketToEarth{
+    100%{
+        top: -300px;
+        transform: rotateZ(-40deg);
+        left: 1300px;
+    }
+}
